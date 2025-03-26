@@ -12,7 +12,7 @@ class UserLogin(Resource):
         user = User.find_by_username(data['username'])
 
         if user and user.verify_password(data['password']):
-            access_token = create_access_token(identity=user.id)
+            access_token = create_access_token(identity=str(user.id))  # Convertimos user.id a string
             return {"access_token": access_token}, 200
         
         return {"message": "Credenciales inválidas"}, 401

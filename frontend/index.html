@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de autenticación-->
+         <div id="auth-section">
+            <h1>Flask Task Manager</h1>
+            <form id="aut-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit" id="login-btn">Iniciar sesión</button>
+                <button type="submit" id="register-btn">Registrarse</button>
+            </form>
+            <p id="auth-message"></p>
+         </div>
+    </div>
+
+    <!-- Sección de tareas (oculta hasta el inicio de sesión)-->
+     <div id="tasks-section" style="display: none;">
+        <h2>Tus Tareas</h2>
+        <form id="tasks-form">
+            <input type="text" id="task-title" placeholder="Título de la tarea" required>
+            <input type="text" id="task-description" placeholder="Descripción de la tarea">
+            <button type="submit">Agregar tarea</button>
+        </form>
+        <ul id="tasks-list"></ul>
+        <button id="logout-btn">Cerrar sesión</button>
+     </div>
+     <script src="script.js"></script>
+</body>
+</html>

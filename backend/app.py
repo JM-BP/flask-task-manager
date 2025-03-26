@@ -5,6 +5,7 @@ from resources.users import UserRegister, UserLogin
 from resources.tasks import TaskResource
 
 app = Flask(__name__)
+
 app.config['JWT_SECRET_KEY'] = 'super-secret-key'  # Clave secreta para firmar tokens
 api = Api(app)
 jwt = JWTManager(app)

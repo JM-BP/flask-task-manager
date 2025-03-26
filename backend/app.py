@@ -1,10 +1,12 @@
 from flask import Flask
+from flask_restful import Api
+from resources.users import UserRegister
 
 app = Flask(__name__)
+api = Api(app)
 
-@app.route('/')
-def home():
-    return {"message": "API Flask funcionando correctamente"}
+# Ruta para registrar usuarios
+api.add_resource(UserRegister, "/register")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
